@@ -23,6 +23,8 @@ namespace webapi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors();
+
             services.AddMvc();
         }
 
@@ -33,6 +35,15 @@ namespace webapi
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            //https://docs.microsoft.com/en-us/aspnet/core/publishing/linuxproduction?tabs=aspnetcore2x
+            //app.UseForwardedHeaders(new ForwardedHeadersOptions
+            //{
+            //    ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
+            //});
+            //app.UseAuthentication();
+
+            app.UseCors(builder => builder.AllowAnyOrigin());
 
             app.UseMvc();
         }
