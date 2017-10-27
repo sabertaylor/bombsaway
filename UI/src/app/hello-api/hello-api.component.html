@@ -1,4 +1,31 @@
-<p>
-  hello-api works!
-  {{results[0]}}
-  <p [innerHtml]="results"></p>
+You:
+
+<table>
+<tr *ngFor="let row of board1; let y = index">
+  <td class="board-square" *ngFor="let square of row; let x = index" (click)="clickSquare(1,x,y)">{{square}}</td>
+</tr>
+</table>
+
+Your ships:
+<table>
+  <tr *ngFor="let row of ships1; let y = index">
+    <td class="board-square" *ngFor="let square of row; let x = index">{{square}}</td>
+  </tr>
+</table>
+  
+Opponent:
+<table>
+  <tr *ngFor="let row of board2; let y = index">
+    <td class="board-square" *ngFor="let square of row; let x = index" (click)="clickSquare(2,x,y)">{{square}}</td>
+  </tr>
+</table>
+
+Opponent's ships:
+<table>
+  <tr *ngFor="let row of ships2; let y = index">
+    <td class="board-square" *ngFor="let square of row; let x = index">{{square}}</td>
+  </tr>
+</table>
+
+<input (keyup)="onKey($event)">
+<p>{{values}}</p>
