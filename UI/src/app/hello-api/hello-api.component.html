@@ -1,31 +1,42 @@
 You:
+<div class="row">
+  <div class="column">
+    <table>
+    <tr *ngFor="let row of board1; let y = index">
+      <td class="board-square" *ngFor="let square of row; let x = index" (click)="clickSquare(1,x,y)">{{square}}</td>
+    </tr>
+    </table>
+  </div>
+  <div class="column">
+    Your ships:
+    <table>
+      <tr *ngFor="let row of ships1; let y = index">
+        <td class="board-square" *ngFor="let square of row; let x = index">{{square}}</td>
+      </tr>
+    </table>
 
-<table>
-<tr *ngFor="let row of board1; let y = index">
-  <td class="board-square" *ngFor="let square of row; let x = index" (click)="clickSquare(1,x,y)">{{square}}</td>
-</tr>
-</table>
+    <div *ngIf="true">Phase: Deploy Ships.<br>Instructions: Press 'B', 'C', 'D' and click on your board to deploy your ships.
+      Press any other key and click to remove ships. When you have 5 B's, 3 C's and 2 D's in straight lines then click the Start button.<br>
+      <button mat-button color="primary">Start</button>
+    </div>
+  </div>
+</div>
 
-Your ships:
-<table>
-  <tr *ngFor="let row of ships1; let y = index">
-    <td class="board-square" *ngFor="let square of row; let x = index">{{square}}</td>
-  </tr>
-</table>
-  
-Opponent:
-<table>
-  <tr *ngFor="let row of board2; let y = index">
-    <td class="board-square" *ngFor="let square of row; let x = index" (click)="clickSquare(2,x,y)">{{square}}</td>
-  </tr>
-</table>
-
-Opponent's ships:
-<table>
-  <tr *ngFor="let row of ships2; let y = index">
-    <td class="board-square" *ngFor="let square of row; let x = index">{{square}}</td>
-  </tr>
-</table>
-
-<input (keyup)="onKey($event)">
-<p>{{values}}</p>
+<div class="row">
+  <div class="column">
+    Opponent:
+    <table>
+      <tr *ngFor="let row of board2; let y = index">
+        <td class="board-square" *ngFor="let square of row; let x = index" (click)="clickSquare(2,x,y)">{{square}}</td>
+      </tr>
+    </table>
+  </div>
+  <div class="column">
+    Opponent's ships:
+    <table>
+      <tr *ngFor="let row of ships2; let y = index">
+        <td class="board-square" *ngFor="let square of row; let x = index">{{square}}</td>
+      </tr>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/API/.vs/webapi/v15/sqlite3/storage.ide
+/API/.vs/webapi/v15/.suo
+/API/webapi/bin
+/API/webapi/obj
+/API/.vs/config

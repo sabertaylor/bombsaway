@@ -23,7 +23,11 @@ namespace webapi.Game
             {
                 for (int y = 0; y <= board.GetLength(1) - 1; y++)
                 {
-                    board[x, y] = string.Empty;
+                    if (x == 0 && y == 0)
+                    {
+                        continue;
+                    }
+                    board[x, y] = "🌊";
                 }
             }
         }

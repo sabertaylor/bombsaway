@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HelloApiComponent } from './hello-api.component';
+import { PlayGame } from './hello-api.component';
 
 describe('HelloApiComponent', () => {
-  let component: HelloApiComponent;
-  let fixture: ComponentFixture<HelloApiComponent>;
+  let component: PlayGame;
+  let fixture: ComponentFixture<PlayGame>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HelloApiComponent ]
+      declarations: [ PlayGame ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HelloApiComponent);
+    fixture = TestBed.createComponent(PlayGame);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
