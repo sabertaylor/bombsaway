@@ -36,7 +36,7 @@ namespace webapi.Game
         {
             for (int i = 1; i <= board.GetLength(0) - 1; i++)
             {
-                board[0, i] = (i - 1).ToString();
+                board[0, i] = i.ToString();
                 board[i, 0] = ((char)((int)'A' + i - 1)).ToString();
             }
         }
